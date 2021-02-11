@@ -36,12 +36,12 @@ public class PartController {
     public String deletePart(@PathVariable int id) {
         Part part = (Part) partsDAO.findById(id);
         if(part == null) {
-            throw new RuntimeException("Employee is not found : " + id);
+            throw new RuntimeException("Part is not found : " + id);
         }
 
         //This will execute the deleteByID.
         partsDAO.deleteById(id);
-        return "Deleted employee id : " + id;
+        return "Deleted part id : " + id;
     }
 
     @PutMapping("/updatePart")
